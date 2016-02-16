@@ -1,0 +1,80 @@
+    \noindent\resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[x=.25cm, y=1cm]
+            % \begin{ganttchart}[
+            % vgrid={*1{draw=dbfblue!50, line width=.5pt}},            canvas/.append style={fill=none, draw=black!5, line width=.5pt},
+            % bar/.append style={fill=dbfdark},
+            % group peaks height=.25,
+            % y unit title=.6cm,
+            % y unit chart=0.6cm,
+            % x unit=0.2cm,
+            % group label font={\bfseries\color{dbfdark}},
+            % milestone label font=\color{dbfdark},
+            % milestone/ .append style={fill=dbfblue},
+            % bar label font=\color{dbfblue}]{1}{28}
+            % \gantttitle{2015}{14}
+            % \gantttitle{2016}{14}\\
+            % \gantttitlelist{40,...,53}{1}
+            % \gantttitlelist{1,...,14}{1}\\
+            % \ganttgroup{Conceptual Design}{1}{10} \\
+            %     \ganttbar{Mission Constraint Analysis}{1}{3} \\
+            %     \ganttbar{Configuration and Formulation}{4}{10} \\
+            %         \ganttmilestone{3 Concepts are Formulated}{11}\\
+            % \ganttgroup{Preliminary Design}{11}{20} \\
+            %     \ganttbar{Mission Constraint Analysis}{20}{3} \\
+            %     \ganttbar{Configuration and Formulation}{4}{10} \\
+            % \ganttgroup{Detailed Design}{21}{28} \\
+            % \end{ganttchart} \\
+            
+ 
+\definecolor{dbfdark}{HTML}{13375E}
+\definecolor{dbfblue}{HTML}{0498D6}
+
+\ganttset{%
+calendar week text={%
+\currentweek%
+}%
+}
+
+\begin{ganttchart}[
+vgrid={*{6}{draw=none}, dotted},
+x unit=.08cm,
+y unit title=.6cm,
+y unit chart=.5cm,
+milestone/.append style={fill=gray, rounded corners=3pt},
+group peaks height=1,
+group peaks width=1.5,
+group/.append style={draw=none,fill=dbfblue},
+group label font={\bfseries\color{dbfblue}},
+milestone label font = {\color{gray}},
+bar/.append style={draw=none,fill=dbfdark},
+bar label font={\color{dbfdark}},
+today=2015-12-01,
+today offset=.5,
+today label = Proposal Submission,
+time slot format=isodate,
+time slot format/start date=2014-12-01]{2015-09-01}{2016-04-15}
+\ganttset{bar height=.5}
+\gantttitlecalendar{year, month=shortname, week} \\ 
+
+\ganttgroup{Recruitment and Planning}{2015-09-01}{2015-10-01}\\
+
+%%%%%%%%%%%%
+\ganttgroup{Conceptual Design}{2015-10-01}{2015-10-15}\\
+
+%%%%%%%%%%%%
+\ganttgroup{Preliminary Design}{2015-10-16}{2015-11-15}\\
+
+\ganttgroup{Detailed Design}{2015-11-15}{2016-01-15}\\
+\ganttbar{Material and Component Testing}{2015-11-16}{2015-12-19}\\
+\ganttbar{Propulsion Testing}{2015-12-20}{2016-01-15}\\
+
+\ganttgroup{Manufacturing and Testing}{2016-01-15}{2016-04-15}\\
+\ganttbar{Prototype 1}{2016-01-16}{2016-01-30}\\
+\ganttbar{Prototype 2}{2016-01-30}{2016-02-20}\\
+\ganttbar{Competition Aircrat}{2016-02-21}{2016-04-04}\\
+
+\ganttmilestone{Design Report}{2016-02-22}
+
+\end{ganttchart}
+        \end{tikzpicture}
+        }

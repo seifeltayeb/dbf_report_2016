@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+% FORMATTING
+\usepackage[table,xcdraw]{xcolor}
+
+%%%%%%%%%% margins and paper size
+\usepackage[hmargin=1.5cm,tmargin=1.3cm,bmargin=2.2cm,letterpaper]{geometry}
+
+%%%%%%%%%% page numbering
+\usepackage{lastpage} %for page M of N
+
+\usepackage[bottom]{footmisc} %for footnotes
+\usepackage{footnote}
+
+
+%%%%%%%%%% graphics, tables and figures
+% general and layout
+\usepackage{float} 						%for text wrapping of figures
+\usepackage{graphicx,setspace,booktabs} %for including graphics
+\usepackage{caption} 					%package for inserting captions
+\captionsetup{font=small,format=plain,labelfont=bf,textfont=it,justification=centerlast} %defines caption formatting
+\usepackage[countmax]{subfloat}
+\onehalfspacing							%sets spacing to 1.5
+\renewcommand{\arraystretch}{1.35}
+\usepackage{pdfpages}
+\usepackage{subfig}						%enables subfigures
+\usepackage[none]{hyphenat}
+%tables
+\usepackage{tabularx}					%tabulars with adjustable column widths
+\usepackage{subfig,booktabs,siunitx}
+\usepackage{array}
+\newcolumntype{C}{>{\centering\arraybackslash}m{10cm}}
+\newcolumntype{N}{>{\centering\arraybackslash}m{2cm}}
+
+%gantt chart
+\usepackage{pgfgantt}
+
+%imagepaths
+\graphicspath{ {./man_and_exec/}{./conceptual_design/}{./preliminary_design/}{./detailed_design/}{./manufacturing_plan/}{./test_plan/}{./performance_results/} }
+
+%%%%%%%%%% lists and numbering
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+%%%%%%%%%% equations and notation
+\usepackage{gensymb}					%generic commands for units i.e. \degree \celsius
+\usepackage{amsmath,amssymb,amsthm} 	%math package for equations
+\usepackage{siunitx}					%for use of SI units
+
+%%%%%%%%%% bibliography
+\usepackage{csquotes}
+\usepackage[style=verbose-ibid,backend=bibtex8]{biblatex}
+\bibliography{dbfreference.bib}
+
+%%%%%%%%%% header and footer + page style
+\usepackage{parskip}
+\addtolength{\headheight}{-8pt}
+\addtolength{\headsep}{20pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+%\chead{\includegraphics[width=\textwidth]{header.eps}}
+\rhead{}
+\lfoot{\textsc{University of Glasgow}}
+\cfoot{}
+\rfoot{Page \thepage \:of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+%%%%%%%%%% table of contents
+\usepackage[toc]{multitoc}			%table of contents package
+\renewcommand*{\multicolumntoc}{2}	%splits table of contents into 2 columns
+\setlength{\columnseprule}{0.1pt}	%draws line between 2 columns	
+\setlength{\columnsep}{25pt}		%space between the content of the 2 columns
+\usepackage{nomencl}
+\makenomenclature
+
+%%%%%%%%%% font
+\renewcommand{\rmdefault}{phv} % Arial
+\renewcommand{\sfdefault}{phv} % Arialt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%  			MAIN BODY				 %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%%%%%%%%%% cover page
+\begin{titlepage}
+\includepdf[pages={1}]{cover.pdf}
+\end{titlepage}
+
+%%%%%%%%%% table of contents
+\tableofcontents
+	\include{./man_and_exec/man_and_exec}
+	\include{./conceptual_design/conceptual_design}
+	\include{./preliminary_design/preliminary_design}
+	\include{./detailed_design/detailed_design}
+	\include{./manufacturing_plan/manufacturing_plan}
+	\include{./test_plan/test_plan}
+	\include{./performance_results/performance_results}
+	\include{nomenclature}
+
+\printnomenclature
+\end{document}

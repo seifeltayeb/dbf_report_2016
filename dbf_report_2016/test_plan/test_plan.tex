@@ -1,0 +1,82 @@
+\section{Testing Plan}
+
+The use of theoretical and computational models has its limitations as many assumptions are made to reduce the complexity. As a result, the need for testing arises in order to evaluate the accuracy of the models, and validate their output. Testing allows the verification of predicted performance and provides data on actual performance. Testing results provide an indication as to whether the components are over designed or if they need further improvement, making these results invaluable for the optimization process.
+
+\subsection{Testing Objectives}
+
+The necessity of testing the individual components that form the aircraft arises from the need to verify their suitability and optimization for the missions in addition to their compliance with the rules. 
+
+\begin{enumerate}
+\item Determine the most suitable propeller and motor combination
+        \begin{enumerate}
+            \item Static thrust tests are conducted with low precision rig to narrow down number of motors to be tested
+            \item Carried out in a wind wind tunnel at different airspeeds and later compared to flight test data
+        \end{enumerate}
+\item Evaluate battery performance
+        \begin{enumerate}
+            \item Maximal discharge rate and actual performance under load such as voltage drop and capacity reduction from the rated value. 
+            \item Verify sufficient cooling in flight by stress testing at worst expected
+        \end{enumerate}
+\item Ensure sufficient structural integrity in all expected flight conditions
+        \begin{enumerate}
+            \item Wing and main boom bending test at simulated 6G load and landing gear at 3G and in different sideslip conditions.
+            \item Connections between the sub assemblies are checked for structural integrity by simulating highest predicted wing loading
+        \end{enumerate}
+\item Test handling characteristics and landing and takeoff performance
+        \begin{enumerate}
+            \item Test flight schedule at different payloads and flight conditions will be carried out to verify and adjust sizing and configuration if required. Ground handling and stability needs to be verified as well.
+        \end{enumerate}
+\item Ensure that the PA's sub-assemblies fit securely within the MSA's fuselage
+\end{enumerate}
+
+\subsubsection{Propulsion Test}
+%
+\paragraph{Lab Testing Sequence:}
+
+The next step in the selection process is to test the motors static thrust while utilizing different propellers in order to determine the best combination.This will be done using a carefully calibrated load cells and a power supply unit .
+Optimal ESC and fuse selection for the given motor will be implemented in the corresponding test circuit, along with insulation tape, and bullet connectors for safety. 
+
+As stated above main selection will be done based on optimal characteristics for the mission bearing the largest amount of points , therefore a static thrust data table will be created for each appropriate motor and propeller set.
+(Note that due to the immense amount of information, only relevant results will be added to the table)
+The results will consequently be compared and discussed in order to find the best option(Fig x.x). 
+
+
+\paragraph{Practical Testing Sequence:}
+
+
+\subsubsection{Battery and Electronics Test}
+Battery testing was carried out with the use of a custom built, computer controlled, constant current discharger that uses modular load boards consisting of regulators that provide a set amount of power to banks of resistors. Each load board carries a pair of thermistors for monitoring board temperatures to provide a layer of safety during extended and strenuous testing, as well as 2 relays, each of which connects one load circuit to the battery, allowing for finer control of the load. 
+
+These 'load boards' are connected to both the battery and control board, which detects the load boards currently connected, controls the relays to control the load as well as monitoring the load board temperatures. In addition, the control board also monitors cell voltage and temperature for logging. The system allows for battery testing to mirror real world flight profiles, as we can upload a test profile to the control board processor which can vary the load during testing to simulate take-off power, turning, climb and landing loads on the battery.
+
+
+\subsection{Structural Testing}
+Structural testing of the aircraft was conducted by verifying the wing spar and the main boom static strength. In addition, the landing gear was drop tested to ensure dynamic load strength. Spars were tested for static strength by modelling the lift distribution as a point load at the center of lift,  located at spar's midpoint. A similar approach was used with the main boom that was suspended from two points, wing and tail positions, after which the load was applied at center of gravity. The design load factor was set at 6G. 
+
+\subsubsection{Wing spar and fuselage boom testing}
+For the wing spar testing, the objective is to simulate the load during a 5G turn with a safety factor of 1.2 which would result in a total maximum load of 6G. The loads resemble each aircraft's MTOW. The lift distribution is represented as a point load acting at the mean aerodynamic chord. Water bottles will be used as a load. The deflection of the spar at the wing tip at different loads will be measured. A similar approach will be used with the fuselage boom. The boom will be suspended from two points, wing and tail aerodynamic centers, and the load applied at aircraft center of gravity. Deflections will be measured at the maximum deflection point of the boom.
+
+\subsubsection{Landing gear testing}
+For the landing gear testing the objective is to simulate the impact at landing, estimated to be 3G. The main landing gear is secured in such way that lateral motion is restricted. The load is applied to the landing gear at its mounting points which attach it to the fuselage. The deflection of the landing gear is then measured. As for the tail
+
+\subsubsection{Sensor Drop Test}
+
+\subsubsection{Flight Test}
+
+\newpage
+\subsubsection{Checklist}
+\input{./test_plan/checklist}
+
+\section{Performance Results}
+
+\subsection{Structure Test Results}
+
+\subsubsection{Wing spar and fuselage boom performance}
+
+\subsubsection{Landing gear performance}
+
+\subsection{Electronics Test Results}
+
+\subsection{Propulsion Test Results}
+
+\subsection{Flight Test Results}
